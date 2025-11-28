@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class FieldHashPolicyDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'entity_table' => 'entityTable', 'field_name' => 'fieldName', 'profile_id' => 'profileId', 'effective_from' => 'effectiveFrom' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'entity_table' => 'entityTable', 'field_name' => 'fieldName', 'profile_id' => 'profileId', 'effective_from' => 'effectiveFrom', 'notes' => 'notes' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
