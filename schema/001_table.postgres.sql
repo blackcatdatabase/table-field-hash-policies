@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.yaml (map@94ebe6c)
+-- Auto-generated from schema-map-postgres.yaml (map@4ae85c5)
 -- engine: postgres
 -- table:  field_hash_policies
 
@@ -9,5 +9,7 @@ CREATE TABLE IF NOT EXISTS field_hash_policies (
   profile_id   BIGINT NOT NULL,               -- hash_profiles
   effective_from TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   notes TEXT NULL,
+  created_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  updated_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   CONSTRAINT uq_fhp UNIQUE (entity_table, field_name, effective_from)
 );

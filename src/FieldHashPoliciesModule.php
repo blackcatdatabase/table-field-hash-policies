@@ -41,7 +41,9 @@ SELECT
   field_name,
   profile_id,
   effective_from,
-  notes
+  notes,
+  created_at,
+  updated_at
 FROM field_hash_policies;
 SQL;
         } else {
@@ -53,7 +55,9 @@ SELECT
   field_name,
   profile_id,
   effective_from,
-  notes
+  notes,
+  created_at,
+  updated_at
 FROM field_hash_policies;
 SQL;
         }

@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.yaml (map@94ebe6c)
+-- Auto-generated from schema-views-mysql.yaml (map@4ae85c5)
 -- engine: mysql
 -- table:  field_hash_policies
 
@@ -10,5 +10,7 @@ SELECT
   field_name,
   profile_id,
   effective_from,
-  notes
+  notes,
+  created_at,
+  updated_at
 FROM field_hash_policies;
