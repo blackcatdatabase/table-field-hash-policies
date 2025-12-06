@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class FieldHashPolicyDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'entity_table' => 'entityTable', 'field_name' => 'fieldName', 'profile_id' => 'profileId', 'effective_from' => 'effectiveFrom' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'entity_table' => 'entityTable', 'field_name' => 'fieldName', 'profile_id' => 'profileId', 'effective_from' => 'effectiveFrom', 'notes' => 'notes', 'created_at' => 'createdAt', 'updated_at' => 'updatedAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
@@ -28,7 +28,7 @@ final class FieldHashPolicyDtoMapper
     /** @var string[] */
     private const JSON_COLS   = [];
     /** @var string[] */
-    private const DATE_COLS   = [ 'effective_from' ];
+    private const DATE_COLS   = [ 'effective_from', 'created_at', 'updated_at' ];
     /** @var string[] */
     private const BIN_COLS    = [];
 
@@ -39,13 +39,8 @@ final class FieldHashPolicyDtoMapper
 
     private static function tz(): DateTimeZone
     {
-        if (self::$tzObj instanceof DateTimeZone) {
-            return self::$tzObj;
-        }
-        try {
+        if (!(self::$tzObj instanceof DateTimeZone)) {
             self::$tzObj = new DateTimeZone(self::TZ);
-        } catch (\Throwable) {
-            self::$tzObj = new DateTimeZone('UTC');
         }
         return self::$tzObj;
     }
