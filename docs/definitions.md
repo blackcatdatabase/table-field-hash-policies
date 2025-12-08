@@ -5,12 +5,12 @@ Effective hashing policy assignments for sensitive columns.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| effective_from | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy takes effect. |
+| effective_from | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy takes effect. |
 | entity_table | VARCHAR(64) | NO |  | Table where the field lives. |
-| field_name |  | NO |  | Column name. |
+| field_name | VARCHAR(64) | NO |  | Column name. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | notes | TEXT | YES |  | Documentation / migration context. |
-| profile_id |  | NO |  | Hash profile applied (FK hash_profiles.id). |
+| profile_id | BIGINT | NO |  | Hash profile applied (FK hash_profiles.id). |
 
 ## Engine Details
 
@@ -55,5 +55,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_field_hash_policies | mysql | algorithm=MERGE, security=INVOKER | [packages\field-hash-policies\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/field-hash-policies/schema/040_views.mysql.sql) |
-| vw_field_hash_policies | postgres |  | [packages\field-hash-policies\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/field-hash-policies/schema/040_views.postgres.sql) |
+| vw_field_hash_policies | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_field_hash_policies | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
