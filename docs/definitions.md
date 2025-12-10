@@ -5,9 +5,9 @@ Effective hashing policy assignments for sensitive columns.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| field_name | VARCHAR(64) | NO |  | Column name. |
 | effective_from | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the policy takes effect. |
 | entity_table | VARCHAR(64) | NO |  | Table where the field lives. |
+| field_name | VARCHAR(64) | NO |  | Column name. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | notes | TEXT | YES |  | Documentation / migration context. |
 | profile_id | BIGINT | NO |  | Hash profile applied (FK hash_profiles.id). |
